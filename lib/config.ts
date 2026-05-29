@@ -32,8 +32,8 @@ export const siteConfig = {
       technologies: ["PHP", "JavaScript", "HTML5", "CSS3", "MySQL", "Docker"],
       gradient: "from-emerald-500 to-teal-600",
       image: "💰",
-      demoUrl: "https://github.com/zida2/cashflow-pro",
-      githubUrl: "https://github.com/zida2/cashflow-pro",
+      demoUrl: "https://github.com/zida2",
+      githubUrl: "https://github.com/zida2",
     },
     {
       title: "Système de Gestion Web Dynamique", 
@@ -49,8 +49,8 @@ export const siteConfig = {
       technologies: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3"],
       gradient: "from-blue-500 to-indigo-600",
       image: "🎓",
-      demoUrl: "https://github.com/zida2/gestion-web-dynamique",
-      githubUrl: "https://github.com/zida2/gestion-web-dynamique",
+      demoUrl: "https://github.com/zida2",
+      githubUrl: "https://github.com/zida2",
     },
     {
       title: "Portfolio 3D & Interfaces Interactives",
@@ -66,8 +66,8 @@ export const siteConfig = {
       technologies: ["JavaScript", "CSS3", "Web Animation", "Frontend Modern UI"],
       gradient: "from-violet-500 to-purple-600",
       image: "🎨",
-      demoUrl: "https://github.com/zida2/portfolio-3d",
-      githubUrl: "https://github.com/zida2/portfolio-3d",
+      demoUrl: "https://github.com/zida2",
+      githubUrl: "https://github.com/zida2",
     },
     
     // PROJETS MODERNES (Next.js, NestJS, etc.)
@@ -86,8 +86,8 @@ export const siteConfig = {
       technologies: ["Next.js", "TypeScript", "Prisma", "Stripe", "TailwindCSS", "PostgreSQL"],
       gradient: "from-green-500 to-emerald-600",
       image: "🛒",
-      demoUrl: "https://github.com/zida2/ecommerce-nextjs",
-      githubUrl: "https://github.com/zida2/ecommerce-nextjs",
+      demoUrl: "https://github.com/zida2",
+      githubUrl: "https://github.com/zida2",
     },
     {
       title: "API NestJS Microservices",
@@ -104,8 +104,8 @@ export const siteConfig = {
       technologies: ["NestJS", "TypeScript", "Prisma", "Socket.io", "JWT", "PostgreSQL", "Redis"],
       gradient: "from-red-500 to-pink-600",
       image: "⚡",
-      demoUrl: "https://github.com/zida2/api-nestjs-microservices",
-      githubUrl: "https://github.com/zida2/api-nestjs-microservices",
+      demoUrl: "https://github.com/zida2",
+      githubUrl: "https://github.com/zida2",
     },
     {
       title: "Chat App React Native",
@@ -122,8 +122,8 @@ export const siteConfig = {
       technologies: ["React Native", "Supabase", "TypeScript", "Expo", "Socket.io"],
       gradient: "from-cyan-500 to-blue-600",
       image: "💬",
-      demoUrl: "https://github.com/zida2/chat-app-react-native",
-      githubUrl: "https://github.com/zida2/chat-app-react-native",
+      demoUrl: "https://github.com/zida2",
+      githubUrl: "https://github.com/zida2",
     },
   ],
 
