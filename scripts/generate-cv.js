@@ -47,6 +47,7 @@ doc.fontSize(12).font('Helvetica-Bold').fillColor(primaryColor).text('COMPÉTENC
 doc.fontSize(10).font('Helvetica').fillColor(darkColor);
 
 const skills = {
+  'Langages Fondamentaux': 'Python, Java, C / C++',
   'Frontend': 'HTML5, CSS3, JavaScript ES6+, React, Next.js, TailwindCSS, Responsive Design, UI/UX, Web Animation',
   'Backend': 'PHP, Node.js, NestJS, MySQL, PostgreSQL, Architecture API REST, Authentification JWT, Socket.io',
   'Outils & DevOps': 'Git & GitHub, VS Code, Docker, XAMPP, Postman, Linux, CI/CD',

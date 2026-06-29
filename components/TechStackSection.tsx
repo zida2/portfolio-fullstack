@@ -4,6 +4,11 @@ import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
 
 const techStack = {
+  "Langages Fondamentaux": [
+    { name: "Python", color: "from-blue-600 to-yellow-500" },
+    { name: "Java", color: "from-red-500 to-orange-600" },
+    { name: "C / C++", color: "from-blue-700 to-cyan-600" },
+  ],
   "Frontend Actuel": [
     { name: "HTML5", color: "from-orange-500 to-red-500" },
     { name: "CSS3", color: "from-blue-500 to-cyan-500" },
@@ -58,6 +63,9 @@ const techStack = {
 export default function TechStackSection() {
   return (
     <section className="relative py-32 px-4" id="tech">
+      {/* Background radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-violet-600/5 rounded-full blur-[120px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +82,7 @@ export default function TechStackSection() {
           </p>
         </motion.div>
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           {Object.entries(techStack).map(([category, technologies], categoryIndex) => (
             <motion.div
               key={category}
@@ -83,24 +91,26 @@ export default function TechStackSection() {
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold mb-6 text-violet-300">{category}</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <h3 className="text-xl font-bold mb-6 text-violet-300 border-l-4 border-violet-500 pl-3">
+                {category}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                 {technologies.map((tech, index) => (
                   <motion.div
                     key={tech.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    transition={{ duration: 0.3, delay: index * 0.03 }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.05, y: -5 }}
+                    whileHover={{ scale: 1.03, y: -4 }}
                   >
-                    <Card className="group p-4 text-center hover:bg-white/10 transition-all duration-300 cursor-pointer relative overflow-hidden">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                      <div className="relative">
-                        <div className={`w-12 h-12 mx-auto mb-3 rounded-lg bg-gradient-to-br ${tech.color} flex items-center justify-center text-white font-bold text-xl shadow-lg`}>
+                    <Card className="group p-4 bg-gray-950/40 backdrop-blur-sm border border-white/5 hover:border-violet-500/20 hover:bg-gray-900/60 transition-all duration-300 cursor-pointer relative overflow-hidden shadow-md hover:shadow-[0_0_20px_rgba(139,92,246,0.1)]">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-[0.06] transition-opacity duration-300`} />
+                      <div className="relative flex items-center gap-4">
+                        <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${tech.color} flex items-center justify-center text-white font-bold text-lg shadow-md`}>
                           {tech.name.charAt(0)}
                         </div>
-                        <p className="font-medium text-white group-hover:text-violet-300 transition-colors">
+                        <p className="font-medium text-gray-200 group-hover:text-violet-300 transition-colors text-sm">
                           {tech.name}
                         </p>
                       </div>
