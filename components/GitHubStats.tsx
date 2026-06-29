@@ -32,7 +32,7 @@ const stats = [
 ]
 
 // Données statiques pour éviter l'hydratation mismatch
-const contributionData = Array.from({ length: 52 }, (_, weekIndex) =>
+const contributionData = Array.from({ length: 53 }, (_, weekIndex) =>
   Array.from({ length: 7 }, (_, dayIndex) => {
     // Utiliser une fonction déterministe basée sur les indices
     const seed = (weekIndex * 7 + dayIndex) * 0.1
@@ -46,23 +46,59 @@ const contributionData = Array.from({ length: 52 }, (_, weekIndex) =>
   })
 )
 
+const months = ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"]
+
 function ContributionGraph() {
   return (
-    <div className="grid grid-cols-12 gap-2">
-      {contributionData.map((week, weekIndex) => (
-        <div key={weekIndex} className="space-y-2">
-          {week.map((bgColor, dayIndex) => (
-            <motion.div
-              key={`${weekIndex}-${dayIndex}`}
-              className={`w-3 h-3 rounded-sm ${bgColor}`}
-              whileHover={{ scale: 1.5 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: (weekIndex * 7 + dayIndex) * 0.001 }}
-            />
-          ))}
+    <div className="flex flex-col gap-2">
+      {/* Month Labels */}
+      <div className="flex gap-[3.8px] pl-8 text-[10px] text-gray-500 font-sans select-none">
+        {months.map((m, idx) => (
+          <span key={m} style={{ marginLeft: idx === 0 ? "0px" : "34px" }}>
+            {m}
+          </span>
+        ))}
+      </div>
+      
+      <div className="flex items-start gap-2">
+        {/* Day Labels */}
+        <div className="flex flex-col justify-between text-[10px] text-gray-500 h-[88px] pr-1 font-sans select-none pt-0.5">
+          <span>Lun</span>
+          <span>Mer</span>
+          <span>Ven</span>
         </div>
-      ))}
+        
+        {/* Grid Calendar */}
+        <div className="flex-1 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-white/10 select-none">
+          <div className="flex gap-[3.5px] min-w-[700px]">
+            {contributionData.map((week, weekIndex) => (
+              <div key={weekIndex} className="flex flex-col gap-[3.5px]">
+                {week.map((bgColor, dayIndex) => (
+                  <motion.div
+                    key={`${weekIndex}-${dayIndex}`}
+                    className={`w-[9px] h-[9px] rounded-[1.5px] ${bgColor} transition-colors hover:brightness-125`}
+                    whileHover={{ scale: 1.3 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: (weekIndex * 7 + dayIndex) * 0.0005 }}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* Legend */}
+      <div className="flex items-center justify-end gap-1.5 text-[10px] text-gray-500 font-sans mt-2 pr-2 select-none">
+        <span>Moins</span>
+        <div className="w-[9px] h-[9px] rounded-[1.5px] bg-white/5" />
+        <div className="w-[9px] h-[9px] rounded-[1.5px] bg-violet-800/30" />
+        <div className="w-[9px] h-[9px] rounded-[1.5px] bg-violet-700/50" />
+        <div className="w-[9px] h-[9px] rounded-[1.5px] bg-violet-600/70" />
+        <div className="w-[9px] h-[9px] rounded-[1.5px] bg-violet-500" />
+        <span>Plus</span>
+      </div>
     </div>
   )
 }
@@ -107,7 +143,7 @@ export default function GitHubStats() {
           ))}
         </div>
 
-        {/* GitHub Contribution Graph Placeholder */}
+        {/* GitHub Contribution Graph */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
